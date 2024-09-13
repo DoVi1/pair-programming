@@ -6,8 +6,6 @@ function getCalculator() {
       sum: a + b,
       numberOfOperationsDone,
     };
-    console.log('calculateSumAndReturnTotalCalls returns ', ret);
-
     return ret;
   };
 

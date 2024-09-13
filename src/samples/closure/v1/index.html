@@ -4,6 +4,25 @@
     <script type="module" src="sum-and-count.js"></script>
   </header>
   <body>
+    <div>
+      Closure used to count the number of calls
+    </div>
+  <pre>
+    function getCalculator() {
+      let numberOfOperationsDone = 0;
+      const calculateSumAndReturnTotalCalls = function (a, b) {
+        numberOfOperationsDone++;
+        const ret = {
+          sum: a + b,
+          numberOfOperationsDone,
+        };
+        return ret;
+      };
+    
+      return calculateSumAndReturnTotalCalls;
+    }
+    
+  </pre>
     <input type="number" value="2" id="num1"/>
     <input type="number" value="5" id="num2"/>
     <input

@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "start": "servor src/index.html --reload"
+    "start": "servor src/. --reload"
   },
   "dependencies": {
     "servor": "^4.0.2"

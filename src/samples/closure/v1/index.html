@@ -1,0 +1,18 @@
+<html>
+  <header>
+    <script type="module" src="../../../common/display-log.js"></script>
+    <script type="module" src="sum-and-count.js"></script>
+  </header>
+  <body>
+    <input type="number" value="2" id="num1"/>
+    <input type="number" value="5" id="num2"/>
+    <input
+      type="button"
+      onclick="window.displayLog(window.calculateSumAndReturnTotalCalls(
+        parseInt(document.getElementById('num1').value),
+        parseInt(document.getElementById('num2').value)))"
+      value="Sum & Count"
+    />
+    <pre id="log-area"></pre>
+  </body>
+</html>

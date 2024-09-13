@@ -1,4 +1,4 @@
-function outerWrapper() {
+function getCalculator() {
   let numberOfOperationsDone = 0;
   const calculateSumAndReturnTotalCalls = function (a, b) {
     numberOfOperationsDone++;
@@ -6,7 +6,7 @@ function outerWrapper() {
       sum: a + b,
       numberOfOperationsDone,
     };
-    console.log('Execute returns ', ret);
+    console.log('calculateSumAndReturnTotalCalls returns ', ret);
 
     return ret;
   };
@@ -14,4 +14,4 @@ function outerWrapper() {
   return calculateSumAndReturnTotalCalls;
 }
 
-window.calculateSumAndReturnTotalCalls = outerWrapper();
+window.calculateSumAndReturnTotalCalls = getCalculator();

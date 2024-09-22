@@ -1,0 +1,56 @@
+<html>
+  <header>
+    <script type="module" src="../../../common/display-log.js"></script>
+    <script type="module" src="sum-and-count-and-reset.js"></script>
+  </header>
+  <body>
+    <div>
+      Closure used to count the number of calls and reset it
+    </div>
+  <pre>
+    function getCalculator() {
+      let numberOfOperationsDone = 0;
+      const calculateSum = function (a, b) {
+        numberOfOperationsDone++;
+        return a + b;
+      };
+      const getNumberOfOperationsDone= function () {
+        return numberOfOperationsDone
+      };
+      const resetNumberOfOperationsDone= function () {
+        numberOfOperationsDone = 0
+        return "Reset done!"
+      };
+    
+      return {
+        calculateSum,
+        getNumberOfOperationsDone,
+        resetNumberOfOperationsDone
+      };
+    }
+    
+    
+  </pre>
+    <input type="number" value="2" id="num1"/>
+    <input type="number" value="5" id="num2"/>
+    <input
+      type="button"
+      onclick="window.displayLog('Sum: ' + window.calculator.calculateSum(
+        parseInt(document.getElementById('num1').value),
+        parseInt(document.getElementById('num2').value)))"
+      value="Sum"
+    />
+    <input
+      type="button"
+      onclick="window.displayLog('Number of operations done: ' + window.calculator.getNumberOfOperationsDone())"
+      value="Get Count"
+    />
+    <input
+    type="button"
+    onclick="window.displayLog(window.calculator.resetNumberOfOperationsDone())"
+    value="Reset Count"
+  />
+
+    <pre id="log-area"></pre>
+  </body>
+</html>
